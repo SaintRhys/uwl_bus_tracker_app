@@ -15,7 +15,8 @@ const BusSelectScreen = props => {
           direction={stopData.item.direction}
           onViewBus={() => {
             props.navigation.navigate("BusTracker", {
-              busId: stopData.item.id
+              busId: stopData.item.id,
+              title: stopData.item.title
             });
           }}
         />

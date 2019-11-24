@@ -9,10 +9,6 @@ import {
 } from "react-native";
 import BusItem from "../components/BusItem";
 
-// const BusTrackerScreen = props => {
-//   const busId = props.navigation.getParam("busId");
-// };
-
 class BusTrackerScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -42,14 +38,14 @@ class BusTrackerScreen extends React.Component {
         </View>
       );
     }
-
-    // let movies = this.state.dataSource.map((val, key) => {
-    //   return <BusItem time={val.time.arrive.time} key={val.time.arrive.time} />;
-    // });
+    if (this.state.dataSource.length === 0) {
+      return (
+        <View style={styles.noBusContainer}>
+          <Text style={styles.noBusText}>NO BUSES DUE</Text>
+        </View>
+      );
+    }
     return (
-      // <ScrollView style={styles.container}>
-      //   <View>{movies}</View>
-      // </ScrollView>
       <View style={styles.screen}>
         <Text>Bus Tracker</Text>
         <View style={styles.listContainerBig}>
@@ -70,6 +66,11 @@ class BusTrackerScreen extends React.Component {
     );
   }
 }
+
+BusTrackerScreen.navigationOptions = navData => {
+  return { headerTitle: navData.navigation.getParam("title") };
+};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -96,6 +97,15 @@ const styles = StyleSheet.create({
   },
   list: {
     flexGrow: 1
+  },
+  noBusContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20
+  },
+  noBusText: {
+    fontFamily: "open-sans",
+    fontSize: 25
   }
 });
 
