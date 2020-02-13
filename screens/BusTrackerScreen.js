@@ -19,21 +19,14 @@ class BusTrackerScreen extends React.Component {
   }
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
-    console.log(this.props.navigation.state.params.busId);
     const { state } = this.props.navigation;
     try {
-      // const response = await fetch(
-      //   "http://uwlshuttle.utrack.com/api/eta/stops/" +
-      //     state.params.busId +
-      //     "?callback.json"
-      // );
       const response = await fetch(
-        "http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json"
+        "http://uwlshuttle.utrack.com/api/eta/stops/" +
+          state.params.busId +
+          "?callback.json"
       );
-      console.log("--------------------------");
-      console.log(response);
       const responseJson = await response.json();
-      console.log(responseJson);
       this.setState({ isLoading: false, dataSource: responseJson });
     } catch (error) {
       console.log(error);
