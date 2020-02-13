@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import Colors from "../constants/Colors";
 
 const BusItem = props => {
   let date = new Date();
@@ -7,12 +8,19 @@ const BusItem = props => {
   let calcMins = props.minutes - date.getMinutes();
   let mins = calcHours + calcMins;
 
+  if (mins < 0) return null;
+
   return (
     <View style={styles.busItem}>
-      <Text style={styles.timeStyle}>{props.time}</Text>
+      <View style={styles.groupText}>
+        <Text style={styles.smallText}>{props.title}</Text>
+        <Text style={styles.timeStyle}>{props.time}</Text>
+        <Text style={styles.smallText}>Scheduled: {props.time}}</Text>
+        <Text style={styles.smallText}>Towards -> paragon</Text>
+      </View>
       <View style={styles.etaStyle}>
-        <Text>{mins}</Text>
-        <Text>mins</Text>
+        <Text style={styles.minText}>{mins}</Text>
+        <Text style={styles.minUnderText}>mins</Text>
       </View>
     </View>
   );
@@ -20,26 +28,47 @@ const BusItem = props => {
 
 const styles = StyleSheet.create({
   busItem: {
-    borderColor: "black",
-    borderWidth: 1,
-    padding: 15,
+    borderColor: Colors.accent,
+    borderRadius: 10,
+    borderWidth: 2,
+    paddingHorizontal: 10,
+    paddingBottom: 5,
+    margin: 10,
     marginVertical: 10,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    alignContent: "center",
-    width: "100%"
+    backgroundColor: "white",
+    shadowColor: "black",
+    shadowOpacity: 0.26,
+    shadowOffset: { width: 0, height: 5 },
+    shadowRadius: 8,
+    elevation: 5
   },
+  groupText: { flexDirection: "column" },
   timeStyle: {
-    fontSize: 25
+    fontSize: 32,
+    color: Colors.primary
   },
+  minText: {
+    fontSize: 25,
+    color: Colors.primary
+  },
+  minUnderText: {
+    fontSize: 12,
+    color: Colors.accent
+  },
+  smallText: { fontSize: 14 },
   etaStyle: {
     alignItems: "center",
-    borderColor: "black",
-    borderWidth: 1,
     borderRadius: 25,
-    backgroundColor: "#ccc",
-    padding: 12
+    padding: 12,
+    backgroundColor: "white",
+    shadowColor: "black",
+    shadowOpacity: 0.26,
+    shadowOffset: { width: 0, height: 5 },
+    shadowRadius: 8,
+    elevation: 5
   }
 });
 

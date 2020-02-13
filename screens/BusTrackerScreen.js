@@ -8,23 +8,33 @@ import {
   ScrollView
 } from "react-native";
 import BusItem from "../components/BusItem";
+import Colors from "../constants/Colors";
 
 class BusTrackerScreen extends React.Component {
+  title = "";
   constructor(props) {
     super(props);
     this.state = { isLoading: true, dataSource: null };
+    title = props.navigation.getParam("title");
   }
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
+    console.log(this.props.navigation.state.params.busId);
     const { state } = this.props.navigation;
     try {
+      // const response = await fetch(
+      //   "http://uwlshuttle.utrack.com/api/eta/stops/" +
+      //     state.params.busId +
+      //     "?callback.json"
+      // );
       const response = await fetch(
-        "http://uwlshuttle.utrack.com/api/eta/stops/" +
-          state.params.busId +
-          "?callback.json"
+        "http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json"
       );
+      console.log("--------------------------");
+      console.log(response);
       const responseJson = await response.json();
-      this.setState({ isLoading: false, dataSource: responseJson.services });
+      console.log(responseJson);
+      this.setState({ isLoading: false, dataSource: responseJson });
     } catch (error) {
       console.log(error);
     }
@@ -38,31 +48,28 @@ class BusTrackerScreen extends React.Component {
         </View>
       );
     }
-    if (this.state.dataSource.length === 0) {
+    if (this.state.dataSource.services.length === 0) {
       return (
         <View style={styles.noBusContainer}>
           <Text style={styles.noBusText}>NO BUSES DUE</Text>
         </View>
       );
     }
+    console.log(this.state.dataSource);
     return (
-      <View style={styles.screen}>
-        <Text>Bus Tracker</Text>
-        <View style={styles.listContainerBig}>
-          <FlatList
-            data={this.state.dataSource}
-            renderItem={({ item }) => (
-              <BusItem
-                time={item.time.arrive.time}
-                hours={item.time.arrive.hrs}
-                minutes={item.time.arrive.mins}
-              />
-            )}
-            keyExtractor={item => item.journeyId}
-            contentContainerStyle={styles.list}
+      <FlatList
+        data={this.state.dataSource.services}
+        renderItem={({ item }) => (
+          <BusItem
+            time={item.time.arrive.time}
+            hours={item.time.arrive.hrs}
+            minutes={item.time.arrive.mins}
+            title={title}
           />
-        </View>
-      </View>
+        )}
+        keyExtractor={item => item.journeyId}
+        contentContainerStyle={styles.list}
+      />
     );
   }
 }
@@ -74,16 +81,10 @@ BusTrackerScreen.navigationOptions = navData => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 10,
-    alignItems: "center"
-  },
-  listContainer: {
-    flex: 1,
-    width: "60%"
-  },
-  listContainerBig: {
-    flex: 1,
-    width: "80%"
+    padding: 20,
+    //alignItems: "center",
+    //justifyContent: "center",
+    backgroundColor: Colors.accent
   },
   listItem: {
     borderColor: "#ccc",
@@ -96,7 +97,11 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   list: {
-    flexGrow: 1
+    // flexGrow: 1
+    flex: 1
+    //width: "100%",
+    //justifyContent: "center"
+    //alignItems: "center"
   },
   noBusContainer: {
     justifyContent: "center",

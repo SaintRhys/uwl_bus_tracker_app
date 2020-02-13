@@ -4,6 +4,7 @@ import STOPINFO from "../data/bus-data";
 import StopItem from "../components/StopItem";
 
 const BusSelectScreen = props => {
+  console.log(STOPINFO[0].id);
   return (
     <FlatList
       data={STOPINFO}
@@ -14,7 +15,7 @@ const BusSelectScreen = props => {
           imageUrl={stopData.item.imageUrl}
           direction={stopData.item.direction}
           onViewBus={() => {
-            props.navigation.navigate("BusTracker", {
+            props.navigation.push("BusTracker", {
               busId: stopData.item.id,
               title: stopData.item.title
             });
