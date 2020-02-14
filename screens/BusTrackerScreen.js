@@ -14,11 +14,16 @@ class BusTrackerScreen extends React.Component {
   title = "";
   constructor(props) {
     super(props);
-    this.state = { isLoading: true, dataSource: null };
+    this.state = { isLoading: true, dataSource: null, isRefreshing: false };
     title = props.navigation.getParam("title");
   }
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
+    this.fetchBusData();
+  }
+
+  async fetchBusData() {
+    this.setState({ isRefreshing: true });
     const { state } = this.props.navigation;
     try {
       const response = await fetch(
@@ -27,7 +32,11 @@ class BusTrackerScreen extends React.Component {
           "?callback.json"
       );
       const responseJson = await response.json();
-      this.setState({ isLoading: false, dataSource: responseJson });
+      this.setState({
+        isLoading: false,
+        dataSource: responseJson,
+        isRefreshing: false
+      });
     } catch (error) {
       console.log(error);
     }
@@ -53,6 +62,8 @@ class BusTrackerScreen extends React.Component {
       <FlatList
         data={this.state.dataSource.services}
         style={{ backgroundColor: Colors.background }}
+        onRefresh={() => this.fetchBusData()}
+        refreshing={this.state.isRefreshing}
         renderItem={({ item }) => (
           <BusItem
             time={item.time.arrive.time}

@@ -46,11 +46,16 @@ const styles = StyleSheet.create({
   },
   image: {
     height: "100%",
-    width: "100%"
+    width: "100%",
+    borderTopRightRadius: 10
+    //borderRadius: 10
   },
   imageContainer: {
     height: "60%",
-    width: "100%"
+    width: "100%",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    overflow: "hidden"
   },
   title: { fontSize: 20, marginVertical: 2 },
   stopInfo: {
