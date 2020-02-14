@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { AppLoading } from "expo";
+//import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import StopNavigator from "./navigation/StopNavigator";
 
@@ -16,14 +16,16 @@ export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   if (!fontLoaded) {
-    return (
-      <AppLoading
-        startAsync={fetchFonts}
-        onFinish={() => {
-          setFontLoaded(true);
-        }}
-      />
-    );
+    // return (
+    //   <AppLoading
+    //     startAsync={fetchFonts}
+    //     onFinish={() => {
+    //       setFontLoaded(true);
+    //     }}
+    //   />
+    // );
+    fetchFonts;
+    setFontLoaded(true);
   }
 
   return <StopNavigator />;

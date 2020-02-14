@@ -16,9 +16,9 @@ const StopNavigator = createStackNavigator(
         backgroundColor: Platform.OS === "android" ? Colors.primary : "white"
       },
       headerTitleStyle: {
-        fontFamily: "open-sans-bold"
+        fontFamily: "System"
       },
-      headerBackTitleStyle: { fontFamily: "open-sans" },
+      headerBackTitleStyle: { fontFamily: "System" },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primary
     }
   }
