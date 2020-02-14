@@ -52,6 +52,7 @@ class BusTrackerScreen extends React.Component {
     return (
       <FlatList
         data={this.state.dataSource.services}
+        style={{ backgroundColor: Colors.background }}
         renderItem={({ item }) => (
           <BusItem
             time={item.time.arrive.time}
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     padding: 20,
     //alignItems: "center",
     //justifyContent: "center",
-    backgroundColor: Colors.accent
+    backgroundColor: Colors.background
   },
   listItem: {
     borderColor: "#ccc",
