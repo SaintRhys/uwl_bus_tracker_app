@@ -10,6 +10,8 @@ import {
   Platform
 } from "react-native";
 
+import Colors from "../constants/Colors";
+
 const StopItem = props => {
   let TouchableCmp =
     Platform.OS === "android" && Platform.Version >= 24
@@ -24,7 +26,9 @@ const StopItem = props => {
           </View>
           <View style={styles.stopInfo}>
             <Text style={styles.title}>{props.stopName}</Text>
-            <Text>To -> {props.direction}</Text>
+            <Text style={{ color: Colors.mainFontColor }}>
+              To -> {props.direction}
+            </Text>
           </View>
         </View>
       </TouchableCmp>
@@ -34,13 +38,13 @@ const StopItem = props => {
 
 const styles = StyleSheet.create({
   container: {
-    shadowColor: "black",
+    shadowColor: Colors.mainFontColor,
     shadowOpacity: 0.26,
     shadowOffset: { width: 0, height: 5 },
     shadowRadius: 8,
     elevation: 5,
     borderRadius: 10,
-    backgroundColor: "white",
+    backgroundColor: Colors.secondary,
     height: 150,
     margin: 10
   },
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     overflow: "hidden"
   },
-  title: { fontSize: 20, marginVertical: 2 },
+  title: { fontSize: 20, marginVertical: 2, color: Colors.mainFontColor },
   stopInfo: {
     marginHorizontal: 10,
     marginVertical: 5
