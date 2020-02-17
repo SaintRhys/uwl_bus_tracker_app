@@ -15,7 +15,7 @@ const BusItem = props => {
       <View style={styles.groupText}>
         <Text style={styles.smallText}>{props.title}</Text>
         <Text style={styles.timeStyle}>{props.time}</Text>
-        <Text style={styles.smallText}>Scheduled: {props.time}}</Text>
+        <Text style={styles.smallText}>Scheduled: {props.time}</Text>
         <Text style={styles.smallText}>Towards -> paragon</Text>
       </View>
       <View style={styles.etaStyle}>
@@ -28,7 +28,7 @@ const BusItem = props => {
 
 const styles = StyleSheet.create({
   busItem: {
-    borderColor: Colors.accent,
+    borderColor: Colors.primary,
     borderRadius: 10,
     borderWidth: 2,
     paddingHorizontal: 10,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "white",
+    backgroundColor: Colors.secondary,
     shadowColor: "black",
     shadowOpacity: 0.26,
     shadowOffset: { width: 0, height: 5 },
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
   },
   minUnderText: {
     fontSize: 12,
-    color: Colors.accent
+    color: Colors.mainFontColor
   },
-  smallText: { fontSize: 14 },
+  smallText: { fontSize: 14, color: Colors.mainFontColor },
   etaStyle: {
     alignItems: "center",
     borderRadius: 25,
     padding: 12,
-    backgroundColor: "white",
+    backgroundColor: Colors.secondary,
     shadowColor: "black",
     shadowOpacity: 0.26,
     shadowOffset: { width: 0, height: 5 },

@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity
+} from "react-native";
+import { Icon } from "react-native-elements";
 import STOPINFO from "../data/bus-data";
 import StopItem from "../components/StopItem";
 
@@ -37,8 +44,25 @@ const styles = StyleSheet.create({
   }
 });
 
-BusSelectScreen.navigationOptions = {
-  headerTitle: "UWL BUS TRACKER"
+BusSelectScreen.navigationOptions = props => {
+  return {
+    headerTitle: "UWL BUS TRACKER",
+    headerRight: (
+      <TouchableOpacity
+        onPress={() => props.navigation.push("About")}
+        style={{ marginRight: 10 }}
+      >
+        <Icon
+          //style={{ paddingRight: 40 }}
+          size={30}
+          name="information-outline"
+          type="material-community"
+          color={Colors.primary}
+          //iconStyle={{ marginLeft: 30 }}
+        />
+      </TouchableOpacity>
+    )
+  };
 };
 
 export default BusSelectScreen;

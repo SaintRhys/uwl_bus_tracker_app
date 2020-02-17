@@ -91,16 +91,6 @@ const styles = StyleSheet.create({
     //justifyContent: "center",
     backgroundColor: Colors.background
   },
-  listItem: {
-    borderColor: "#ccc",
-    borderWidth: 1,
-    padding: 15,
-    marginVertical: 10,
-    backgroundColor: "white",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%"
-  },
   list: {
     // flexGrow: 1
     flex: 1
@@ -109,13 +99,17 @@ const styles = StyleSheet.create({
     //alignItems: "center"
   },
   noBusContainer: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: Colors.background,
     padding: 20
   },
   noBusText: {
-    fontFamily: "open-sans",
-    fontSize: 25
+    fontFamily: "System",
+    color: Colors.mainFontColor,
+    fontWeight: "bold",
+    fontSize: 40
   }
 });
 
