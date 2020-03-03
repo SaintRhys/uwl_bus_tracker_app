@@ -1,4 +1,4 @@
-#Mon Mar 02 18:29:43 GMT 2020
-base.0=C\:\\Users\\David kd\\Desktop\\android fun\\uwl_bus_tracker_app\\uwl_bus_tracker_app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Mar 03 14:27:37 GMT 2020
+base.0=C\:\\Users\\David kd\\Desktop\\android fun\\clone\\uwl_bus_tracker_app\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

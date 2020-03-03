@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import { Platform } from "react-native";
-import "react-native-gesture-handler";
+import {Platform} from 'react-native';
+import 'react-native-gesture-handler';
 
-import Colors from "../constants/Colors";
-import BusSelectScreen from "../screens/BusSelectScreen";
-import BusTrackerScreen from "../screens/BusTrackerScreen";
-import AboutScreen from "../screens/AboutScreen";
+import Colors from '../constants/Colors';
+import BusSelectScreen from '../screens/BusSelectScreen';
+import BusTrackerScreen from '../screens/BusTrackerScreen';
+import AboutScreen from '../screens/AboutScreen';
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {NavigationContainer} from '@react-navigation/native';
+
+import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 // const StopNavigator = createStackNavigator(
 //   {
@@ -40,20 +39,13 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Stops" component={Bus} />
-        <Tab.Screen name="About" component={AboutScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-}
+      <Stack.Navigator>
+        <Stack.Screen name="BusSelect" component={BusSelectScreen} />
 
-function Bus() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Bus Select" component={BusSelectScreen} />
-      <Stack.Screen name="Bus Tracker" component={BusTrackerScreen} />
-    </Stack.Navigator>
+        <Stack.Screen name="BusTracker" component={BusTrackerScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

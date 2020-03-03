@@ -1,4 +1,4 @@
-let darkMode = true;
+let darkMode = false;
 export default {
   primary: darkMode === false ? "#0055A3" : "#deefff",
   secondary: darkMode === false ? "#fff" : "#171717",
