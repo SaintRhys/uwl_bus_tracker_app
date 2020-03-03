@@ -7,6 +7,7 @@ import Colors from '../constants/Colors';
 import BusSelectScreen from '../screens/BusSelectScreen';
 import BusTrackerScreen from '../screens/BusTrackerScreen';
 import AboutScreen from '../screens/AboutScreen';
+import Home from '../navigation/HomeTabs';
 
 import {NavigationContainer} from '@react-navigation/native';
 
@@ -40,6 +41,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="BusSelect" component={BusSelectScreen} />
         <Stack.Screen name="BusTracker" component={BusTrackerScreen} />
         <Stack.Screen name="About" component={AboutScreen} />

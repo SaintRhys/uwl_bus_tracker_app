@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Colors from '../constants/Colors';
+import {Icon} from 'react-native-elements';
 
 const BusItem = props => {
   let date = new Date();
