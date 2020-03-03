@@ -1,41 +1,18 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-//import { AppLoading } from "expo";
-import * as Font from "expo-font";
-import StopNavigator from "./navigation/StopNavigator";
-
-const fetchFonts = () => {
-  return Font.loadAsync({
-    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
-    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-    "semikolon-bold": require("./assets/fonts/Semikolon-Classic-W03-Bold.ttf")
-  });
-};
+import * as React from 'react';
+import {Button, View, Text, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import StopNavigator from './navigation/StopNavigator';
 
 export default function App() {
-  const [fontLoaded, setFontLoaded] = useState(false);
-
-  if (!fontLoaded) {
-    // return (
-    //   <AppLoading
-    //     startAsync={fetchFonts}
-    //     onFinish={() => {
-    //       setFontLoaded(true);
-    //     }}
-    //   />
-    // );
-    fetchFonts;
-    setFontLoaded(true);
-  }
-
   return <StopNavigator />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

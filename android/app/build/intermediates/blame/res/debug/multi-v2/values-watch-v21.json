@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\rhyss\\Documents\\Uni\\Programming\\React Native\\uwl_bus_tracker\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\Users\\David kd\\Desktop\\android fun\\uwl_bus_tracker_app\\uwl_bus_tracker_app\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rhyss\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.1.0.aar\\e25a45154ea97d64d7a79b2621555479\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\David kd\\.gradle\\caches\\transforms-2\\files-2.1\\73deb566d56d39443bde55341c663e63\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

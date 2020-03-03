@@ -4,4 +4,10 @@
    <FileRef
       location = "container:uwl_bus_tracker_app.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:uwl_bus_tracker_app.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

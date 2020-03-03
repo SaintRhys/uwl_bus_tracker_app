@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ActivityIndicator,
   FlatList,
-  ScrollView
-} from "react-native";
-import BusItem from "../components/BusItem";
-import Colors from "../constants/Colors";
+  ScrollView,
+} from 'react-native';
+import BusItem from '../components/BusItem';
+import Colors from '../constants/Colors';
 
 class BusTrackerScreen extends React.Component {
-  title = "";
+  title = '';
   constructor(props) {
     super(props);
-    this.state = { isLoading: true, dataSource: null, isRefreshing: false };
-    title = props.navigation.getParam("title");
+    this.state = {
+      isLoading: true,
+      dataSource: null,
+      isRefreshing: false,
+      title: this.props.route.params.title,
+    };
+    // this.title = props.navigation.getParam('this.props.route.params.title');
   }
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
@@ -23,19 +28,22 @@ class BusTrackerScreen extends React.Component {
   }
 
   async fetchBusData() {
-    this.setState({ isRefreshing: true });
-    const { state } = this.props.navigation;
+    this.setState({isRefreshing: true});
+    const {state} = this.props.navigation;
+
+    // console.warn(this.props.route.params.busId);
+
     try {
       const response = await fetch(
-        "http://uwlshuttle.utrack.com/api/eta/stops/" +
-          state.params.busId +
-          "?callback.json"
+        'http://uwlshuttle.utrack.com/api/eta/stops/' +
+          this.props.route.params.busId +
+          '?callback.json',
       );
       const responseJson = await response.json();
       this.setState({
         isLoading: false,
         dataSource: responseJson,
-        isRefreshing: false
+        isRefreshing: false,
       });
     } catch (error) {
       console.log(error);
@@ -61,15 +69,15 @@ class BusTrackerScreen extends React.Component {
     return (
       <FlatList
         data={this.state.dataSource.services}
-        style={{ backgroundColor: Colors.background }}
+        style={{backgroundColor: Colors.background}}
         onRefresh={() => this.fetchBusData()}
         refreshing={this.state.isRefreshing}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <BusItem
             time={item.time.arrive.time}
             hours={item.time.arrive.hrs}
             minutes={item.time.arrive.mins}
-            title={title}
+            title={this.state.title}
           />
         )}
         keyExtractor={item => item.journeyId}
@@ -80,7 +88,7 @@ class BusTrackerScreen extends React.Component {
 }
 
 BusTrackerScreen.navigationOptions = navData => {
-  return { headerTitle: navData.navigation.getParam("title") };
+  return {headerTitle: this.state.title};
 };
 
 const styles = StyleSheet.create({
@@ -89,28 +97,28 @@ const styles = StyleSheet.create({
     padding: 20,
     //alignItems: "center",
     //justifyContent: "center",
-    backgroundColor: Colors.background
+    backgroundColor: Colors.background,
   },
   list: {
     // flexGrow: 1
-    flex: 1
+    flex: 1,
     //width: "100%",
     //justifyContent: "center"
     //alignItems: "center"
   },
   noBusContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: Colors.background,
-    padding: 20
+    padding: 20,
   },
   noBusText: {
-    fontFamily: "System",
+    fontFamily: 'System',
     color: Colors.mainFontColor,
-    fontWeight: "bold",
-    fontSize: 40
-  }
+    fontWeight: 'bold',
+    fontSize: 40,
+  },
 });
 
 export default BusTrackerScreen;

@@ -1,31 +1,52 @@
-import { Platform } from "react-native";
-import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
-import Colors from "../constants/Colors";
-import BusSelectScreen from "../screens/BusSelectScreen";
-import BusTrackerScreen from "../screens/BusTrackerScreen";
-import AboutScreen from "../screens/AboutScreen";
+import React from 'react';
 
-const StopNavigator = createStackNavigator(
-  {
-    BusSelect: BusSelectScreen,
-    BusTracker: BusTrackerScreen,
-    About: AboutScreen
-  },
-  {
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor:
-          Platform.OS === "android" ? Colors.primary : Colors.secondary
-      },
-      headerTitleStyle: {
-        fontFamily: "System"
-      },
-      headerBackTitleStyle: { fontFamily: "System" },
-      headerTintColor:
-        Platform.OS === "android" ? Colors.secondary : Colors.primary
-    }
-  }
-);
+import {Platform} from 'react-native';
+import 'react-native-gesture-handler';
 
-export default createAppContainer(StopNavigator);
+import Colors from '../constants/Colors';
+import BusSelectScreen from '../screens/BusSelectScreen';
+import BusTrackerScreen from '../screens/BusTrackerScreen';
+import AboutScreen from '../screens/AboutScreen';
+
+import {NavigationContainer} from '@react-navigation/native';
+
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+// const StopNavigator = createStackNavigator(
+//   {
+//     BusSelect: BusSelectScreen,
+//     BusTracker: BusTrackerScreen,
+//     About: AboutScreen,
+//   },
+//   {
+//     defaultNavigationOptions: {
+//       headerStyle: {
+//         backgroundColor:
+//           Platform.OS === 'android' ? Colors.primary : Colors.secondary,
+//       },
+//       headerTitleStyle: {
+//         fontFamily: 'System',
+//       },
+//       headerBackTitleStyle: {fontFamily: 'System'},
+//       headerTintColor:
+//         Platform.OS === 'android' ? Colors.secondary : Colors.primary,
+//     },
+//   },
+// );
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="BusSelect" component={BusSelectScreen} />
+
+        <Stack.Screen name="BusTracker" component={BusTrackerScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\rhyss\\Documents\\Uni\\Programming\\React Native\\uwl_bus_tracker\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
+            "outputFile": "C:\\Users\\David kd\\Desktop\\android fun\\uwl_bus_tracker_app\\uwl_bus_tracker_app\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rhyss\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.1.0.aar\\68da4bfbbadcf9c2cc2e16a8e4464b9d\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\David kd\\.gradle\\caches\\transforms-2\\files-2.1\\928093bcdd487fb388a5b29b20c03b5e\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rhyss\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.1.0.aar\\e25a45154ea97d64d7a79b2621555479\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\David kd\\.gradle\\caches\\transforms-2\\files-2.1\\73deb566d56d39443bde55341c663e63\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
