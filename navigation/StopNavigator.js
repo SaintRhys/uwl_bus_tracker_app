@@ -41,7 +41,6 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="BusSelect" component={BusSelectScreen} />
-
         <Stack.Screen name="BusTracker" component={BusTrackerScreen} />
         <Stack.Screen name="About" component={AboutScreen} />
       </Stack.Navigator>

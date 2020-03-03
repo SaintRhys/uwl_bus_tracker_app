@@ -6,12 +6,20 @@ import {
   ActivityIndicator,
   FlatList,
   ScrollView,
+  Button,
 } from 'react-native';
 import BusItem from '../components/BusItem';
 import Colors from '../constants/Colors';
 
 class BusTrackerScreen extends React.Component {
-  title = '';
+  static navigationOptions = ({navigation}) => ({
+    title: `jhsdf`,
+    headerTitleStyle: {textAlign: 'center', alignSelf: 'center'},
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+  });
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,13 +33,15 @@ class BusTrackerScreen extends React.Component {
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
     this.fetchBusData();
+
+    this.props.navigation.setOptions({title: this.props.route.params.title});
   }
 
   async fetchBusData() {
     this.setState({isRefreshing: true});
     const {state} = this.props.navigation;
 
-    // console.warn(this.props.route.params.busId);
+    //console.warn(this.props.route.params.title);
 
     try {
       const response = await fetch(
@@ -77,7 +87,6 @@ class BusTrackerScreen extends React.Component {
             time={item.time.arrive.time}
             hours={item.time.arrive.hrs}
             minutes={item.time.arrive.mins}
-            title={this.state.title}
           />
         )}
         keyExtractor={item => item.journeyId}
