@@ -7,19 +7,16 @@ import {
   FlatList,
   ScrollView,
   Button,
+  Image,
 } from 'react-native';
 import BusItem from '../components/BusItem';
 import Colors from '../constants/Colors';
 
-class BusTrackerScreen extends React.Component {
-  static navigationOptions = ({navigation}) => ({
-    title: `jhsdf`,
-    headerTitleStyle: {textAlign: 'center', alignSelf: 'center'},
-    headerStyle: {
-      backgroundColor: 'white',
-    },
-  });
+import {Icon} from 'react-native-elements';
 
+import {Banner} from 'react-native-paper';
+
+class BusTrackerScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +24,7 @@ class BusTrackerScreen extends React.Component {
       dataSource: null,
       isRefreshing: false,
       title: this.props.route.params.title,
+      banner: true,
     };
     // this.title = props.navigation.getParam('this.props.route.params.title');
   }
@@ -77,33 +75,50 @@ class BusTrackerScreen extends React.Component {
     }
     console.log(this.state.dataSource);
     return (
-      <FlatList
-        data={this.state.dataSource.services}
-        style={{backgroundColor: Colors.background}}
-        onRefresh={() => this.fetchBusData()}
-        refreshing={this.state.isRefreshing}
-        renderItem={({item}) => (
-          <BusItem
-            time={item.time.arrive.time}
-            hours={item.time.arrive.hrs}
-            minutes={item.time.arrive.mins}
-          />
-        )}
-        keyExtractor={item => item.journeyId}
-        contentContainerStyle={styles.list}
-      />
+      <View style={styles.screen}>
+        <Banner
+          visible={this.state.banner}
+          actions={[
+            {
+              label: 'Change Direction',
+              onPress: () => {
+                this.props.navigation.push('BusTracker', {
+                  busId: this.props.route.params.sawp,
+                  title: this.props.route.params.sawpTitle,
+                  sawp: this.props.route.params.busId,
+                  sawpTitle: this.props.route.params.title,
+                });
+              },
+            },
+          ]}
+          icon={({size}) => (
+            <Icon name="swap-horizontal" type="material-community" />
+          )}>
+          There was a problem processing a transaction on your credit card.
+        </Banner>
+        <FlatList
+          data={this.state.dataSource.services}
+          style={{backgroundColor: Colors.background}}
+          onRefresh={() => this.fetchBusData()}
+          refreshing={this.state.isRefreshing}
+          renderItem={({item}) => (
+            <BusItem
+              time={item.time.arrive.time}
+              hours={item.time.arrive.hrs}
+              minutes={item.time.arrive.mins}
+            />
+          )}
+          keyExtractor={item => item.journeyId}
+          contentContainerStyle={styles.list}
+        />
+      </View>
     );
   }
 }
 
-BusTrackerScreen.navigationOptions = navData => {
-  return {headerTitle: this.state.title};
-};
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 20,
     //alignItems: "center",
     //justifyContent: "center",
     backgroundColor: Colors.background,

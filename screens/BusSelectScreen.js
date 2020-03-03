@@ -22,6 +22,8 @@ const BusSelectScreen = props => {
             props.navigation.push('BusTracker', {
               busId: stopData.item.id,
               title: stopData.item.title,
+              sawp: stopData.item.sawp,
+              sawpTitle: stopData.item.sawpTitle,
             });
           }}
         />
