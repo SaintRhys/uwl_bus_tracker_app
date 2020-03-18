@@ -5,13 +5,14 @@ INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\an
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:1:1-26:12
 MERGED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-community_async-storage] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_masked-view] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-safe-area-context\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3e0a6e5d00e5ce73e6f7c81b2a3b3d68\AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5fd35a569539f3d490f7ca815df099ed\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\97c1baffbbfc32891296d77c8672882e\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\73deb566d56d39443bde55341c663e63\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\7f6a7a37a5e704fa080d79a5e2e15cf6\AndroidManifest.xml:17:1-24:12
@@ -49,7 +50,7 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\David kd\.gradle\cac
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5aa445c6881a22f8535778329fd77ad4\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5af905a53c0700446c1c8fe32993e645\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\886d89f656ea08f0ff39b0f89b4cdcaa\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\263b2393674c81139288353553ca98c4\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\ab01c5e59cd1f61aa4095a2b8449e4c8\AndroidManifest.xml:2:1-9:12
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\debug\AndroidManifest.xml:2:1-8:12
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\debug\AndroidManifest.xml:2:1-8:12
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\debug\AndroidManifest.xml:2:1-8:12
@@ -78,8 +79,8 @@ application
 ADDED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:6:5-24:19
 MERGED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:6:5-24:19
 MERGED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml:6:5-24:19
-MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3e0a6e5d00e5ce73e6f7c81b2a3b3d68\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3e0a6e5d00e5ce73e6f7c81b2a3b3d68\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5fd35a569539f3d490f7ca815df099ed\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5fd35a569539f3d490f7ca815df099ed\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\97c1baffbbfc32891296d77c8672882e\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\97c1baffbbfc32891296d77c8672882e\AndroidManifest.xml:22:5-20
 MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3f5c68656301e3f8639ca07887b68a31\AndroidManifest.xml:11:5-20
@@ -142,6 +143,10 @@ uses-sdk
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-community_async-storage] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_async-storage] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\async-storage\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\@react-native-community\masked-view\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -152,10 +157,8 @@ MERGED from [:react-native-safe-area-context] C:\Users\David kd\Desktop\android 
 MERGED from [:react-native-safe-area-context] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-safe-area-context\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3e0a6e5d00e5ce73e6f7c81b2a3b3d68\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\3e0a6e5d00e5ce73e6f7c81b2a3b3d68\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5fd35a569539f3d490f7ca815df099ed\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5fd35a569539f3d490f7ca815df099ed\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\97c1baffbbfc32891296d77c8672882e\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\97c1baffbbfc32891296d77c8672882e\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\73deb566d56d39443bde55341c663e63\AndroidManifest.xml:20:5-22:41
@@ -230,8 +233,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\David kd
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\5af905a53c0700446c1c8fe32993e645\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\886d89f656ea08f0ff39b0f89b4cdcaa\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\886d89f656ea08f0ff39b0f89b4cdcaa\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\263b2393674c81139288353553ca98c4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\263b2393674c81139288353553ca98c4\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\ab01c5e59cd1f61aa4095a2b8449e4c8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\David kd\.gradle\caches\transforms-2\files-2.1\ab01c5e59cd1f61aa4095a2b8449e4c8\AndroidManifest.xml:5:5-7:41
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\debug\AndroidManifest.xml
 INJECTED from C:\Users\David kd\Desktop\android fun\clone\uwl_bus_tracker_app\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion

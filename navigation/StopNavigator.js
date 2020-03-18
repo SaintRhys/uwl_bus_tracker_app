@@ -9,6 +9,8 @@ import BusTrackerScreen from '../screens/BusTrackerScreen';
 import AboutScreen from '../screens/AboutScreen';
 import Home from '../navigation/HomeTabs';
 
+import TestScreen from '../screens/TestScreen';
+
 import {NavigationContainer} from '@react-navigation/native';
 
 import {createStackNavigator} from '@react-navigation/stack';
@@ -41,6 +43,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Test" component={TestScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="BusSelect" component={BusSelectScreen} />
         <Stack.Screen name="BusTracker" component={BusTrackerScreen} />

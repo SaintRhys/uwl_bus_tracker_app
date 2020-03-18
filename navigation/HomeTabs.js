@@ -9,6 +9,7 @@ import Colors from '../constants/Colors';
 
 import BusSelectScreen from '../screens/BusSelectScreen';
 import AboutScreen from '../screens/AboutScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -26,7 +27,7 @@ export default function App() {
           } else if (route.name === 'About') {
             iconName = 'information';
           } else if (route.name === 'Settings') {
-            iconName = 'information';
+            iconName = 'cogs';
           }
 
           // You can return any component that you like here!
@@ -46,7 +47,7 @@ export default function App() {
       }}>
       <Tab.Screen name="Bus Stops" component={BusSelectScreen} />
       <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Settings" component={AboutScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 }
