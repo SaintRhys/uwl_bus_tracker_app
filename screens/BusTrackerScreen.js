@@ -8,6 +8,7 @@ import {
   ScrollView,
   Button,
   Image,
+  StatusBar,
 } from 'react-native';
 import BusItem from '../components/BusItem';
 import Colors from '../constants/Colors';
@@ -15,6 +16,7 @@ import Colors from '../constants/Colors';
 import {Icon} from 'react-native-elements';
 
 import {Banner} from 'react-native-paper';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 class BusTrackerScreen extends React.Component {
   constructor(props) {
@@ -24,27 +26,30 @@ class BusTrackerScreen extends React.Component {
       dataSource: null,
       isRefreshing: false,
       title: this.props.route.params.title,
+      busId: this.props.route.params.busId,
+      sawpTitle: this.props.route.params.sawpTitle,
+      sawpId: this.props.route.params.sawp,
       banner: true,
     };
     // this.title = props.navigation.getParam('this.props.route.params.title');
   }
   async componentDidMount() {
     //http://uwlshuttle.utrack.com/api/eta/stops/55?callback.json
-    this.fetchBusData();
-
+    this.fetchBusData(this.state.busId);
+    console.log('new id: ' + this.state.sawpId + ' : ' + this.state.sawpTitle);
+    console.log('old id: ' + this.state.busId + ' : ' + this.state.title);
     this.props.navigation.setOptions({title: this.props.route.params.title});
   }
 
-  async fetchBusData() {
+  async fetchBusData(busId) {
     this.setState({isRefreshing: true});
-    const {state} = this.props.navigation;
 
     //console.warn(this.props.route.params.title);
-
+    console.log(this.state.busId);
     try {
       const response = await fetch(
         'http://uwlshuttle.utrack.com/api/eta/stops/' +
-          this.props.route.params.busId +
+          busId +
           '?callback.json',
       );
       const responseJson = await response.json();
@@ -58,10 +63,33 @@ class BusTrackerScreen extends React.Component {
     }
   }
 
+  changeDirection() {
+    console.log('changing direction');
+    console.log('new id: ' + this.state.sawpId + ' : ' + this.state.sawpTitle);
+    console.log('old id: ' + this.state.busId + ' : ' + this.state.title);
+    let tempId = this.state.busId;
+    let tempTitle = this.state.title;
+    this.setState({
+      busId: this.state.sawpId,
+      title: this.state.sawpTitle,
+      sawpTitle: tempTitle,
+      sawpId: tempId,
+      isLoading: true,
+      isRefreshing: false,
+    });
+
+    this.props.navigation.setOptions({title: this.state.sawpTitle});
+    this.fetchBusData(this.state.sawpId);
+  }
+
   render() {
     if (this.state.isLoading) {
       return (
-        <View style={styles.screen}>
+        <View style={[styles.screen, {paddingTop: 10}]}>
+          <StatusBar
+            barStyle="dark-content"
+            backgroundColor={Colors.mainFontColor}
+          />
           <ActivityIndicator />
         </View>
       );
@@ -69,14 +97,22 @@ class BusTrackerScreen extends React.Component {
     if (this.state.dataSource.services.length === 0) {
       return (
         <View style={styles.noBusContainer}>
+          <StatusBar
+            barStyle="dark-content"
+            backgroundColor={Colors.mainFontColor}
+          />
           <Text style={styles.noBusText}>NO BUSES DUE</Text>
         </View>
       );
     }
-    console.log(this.state.dataSource);
+    //console.log(this.state.dataSource);
     return (
       <View style={styles.screen}>
-        <Banner
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor={Colors.mainFontColor}
+        />
+        {/* <Banner
           visible={this.state.banner}
           actions={[
             {
@@ -93,19 +129,34 @@ class BusTrackerScreen extends React.Component {
           ]}
           icon={({size}) => (
             <Icon name="swap-horizontal" type="material-community" />
-          )}>
-          There was a problem processing a transaction on your credit card.
-        </Banner>
+          )}
+        /> */}
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingHorizontal: 10,
+            paddingVertical: 5,
+            backgroundColor: 'lightgrey',
+          }}>
+          <Icon name="swap-horizontal" type="material-community" />
+          <TouchableOpacity style={{}} onPress={() => this.changeDirection()}>
+            <Text style={{fontSize: 20, fontWeight: 'bold', color: 'purple'}}>
+              Change Direction
+            </Text>
+          </TouchableOpacity>
+        </View>
         <FlatList
           data={this.state.dataSource.services}
-          style={{backgroundColor: Colors.background}}
-          onRefresh={() => this.fetchBusData()}
+          style={{flex: 1, backgroundColor: Colors.background}}
+          onRefresh={() => this.fetchBusData(this.state.busId)}
           refreshing={this.state.isRefreshing}
           renderItem={({item}) => (
             <BusItem
               time={item.time.arrive.time}
               hours={item.time.arrive.hrs}
               minutes={item.time.arrive.mins}
+              title={this.state.title}
             />
           )}
           keyExtractor={item => item.journeyId}

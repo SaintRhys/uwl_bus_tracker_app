@@ -47,7 +47,7 @@ export default function App() {
       }}>
       <Tab.Screen name="Bus Stops" component={BusSelectScreen} />
       <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
     </Tab.Navigator>
   );
 }

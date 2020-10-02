@@ -1,5 +1,13 @@
-import React from 'react';
-import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import React, {useEffect, useCallback} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  StatusBar,
+} from 'react-native';
 import {Icon} from 'react-native-elements';
 import STOPINFO from '../data/bus-data';
 import StopItem from '../components/StopItem';
@@ -7,28 +15,36 @@ import StopItem from '../components/StopItem';
 import Colors from '../constants/Colors';
 
 const BusSelectScreen = props => {
-  console.log(STOPINFO[0].id);
+  useEffect(() => {}, []);
+
+  const getStopItem = useCallback(item => {
+    return (
+      <StopItem
+        stopName={item.item.title}
+        imageUrl={item.item.imageUrl}
+        direction={item.item.direction}
+        onViewBus={() => {
+          props.navigation.push('BusTracker', {
+            busId: item.item.id,
+            title: item.item.title,
+            sawp: item.item.sawp,
+            sawpTitle: item.item.sawpTitle,
+          });
+        }}
+      />
+    );
+  }, []);
+
   return (
-    <FlatList
-      data={STOPINFO}
-      keyExtractor={stop => stop.id}
-      style={{backgroundColor: Colors.background}}
-      renderItem={stopData => (
-        <StopItem
-          stopName={stopData.item.title}
-          imageUrl={stopData.item.imageUrl}
-          direction={stopData.item.direction}
-          onViewBus={() => {
-            props.navigation.push('BusTracker', {
-              busId: stopData.item.id,
-              title: stopData.item.title,
-              sawp: stopData.item.sawp,
-              sawpTitle: stopData.item.sawpTitle,
-            });
-          }}
-        />
-      )}
-    />
+    <>
+      <StatusBar barStyle="dark-content" backgroundColor={Colors.primary} />
+      <FlatList
+        data={STOPINFO}
+        keyExtractor={stop => stop.id}
+        style={{backgroundColor: Colors.background}}
+        renderItem={getStopItem}
+      />
+    </>
   );
 };
 

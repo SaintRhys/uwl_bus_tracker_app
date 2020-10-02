@@ -10,31 +10,29 @@ const AboutScreen = props => {
         <Card.Content>
           <Title>About </Title>
           <Paragraph>
-            Wise busy past both park when an ye no. Nay likely her length sooner
-            thrown sex lively income. The expense windows adapted sir. Wrong
-            widen drawn ample eat off doors money. Offending belonging promotion
-            provision an be oh consulted ourselves it. Blessing welcomed
-            ladyship she met humoured sir breeding her. Six curiosity day
-            assurance bed necessary.{' '}
+            This is the unofficial UWL bus tracker app, as there isn't one
+            provided by UWL. This was made by me and a friend for use by UWL
+            students. If something doesn't seem right, you want more features
+            added or you want to get involved, get in contact.
           </Paragraph>
         </Card.Content>
       </Card>
 
       <Card style={{marginTop: 10}}>
-        <Card.Title title="Creatures" />
+        <Card.Title title="Developers" />
         <Card.Content>
           <Paragraph>Rhys St Romaine</Paragraph>
           <Paragraph>David Garrick - Bangbola</Paragraph>
         </Card.Content>
       </Card>
-      <Card style={{marginTop: 10}}>
+      {/* <Card style={{marginTop: 10}}>
         <Card.Title title="Socials" />
         <Card.Content>
           <Paragraph>Privacy Policy</Paragraph>
           <Paragraph>Linked in</Paragraph>
           <Paragraph>Git Hub</Paragraph>
         </Card.Content>
-      </Card>
+      </Card> */}
     </View>
   );
 };

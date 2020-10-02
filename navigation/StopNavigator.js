@@ -43,7 +43,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Test" component={TestScreen} />
+        {/* <Stack.Screen name="Test" component={TestScreen} /> */}
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="BusSelect" component={BusSelectScreen} />
         <Stack.Screen name="BusTracker" component={BusTrackerScreen} />

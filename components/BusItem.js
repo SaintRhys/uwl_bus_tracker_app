@@ -8,7 +8,7 @@ const BusItem = props => {
   let calcHours = (props.hours - date.getHours()) * 60;
   let calcMins = props.minutes - date.getMinutes();
   let mins = calcHours + calcMins;
-
+  let toward = props.title.split('->')[1];
   if (mins < 0) return null;
 
   return (
@@ -17,7 +17,7 @@ const BusItem = props => {
         {/* <Text style={styles.smallText}>{props.title}</Text> */}
         <Text style={styles.timeStyle}>{props.time}</Text>
         <Text style={styles.smallText}>Scheduled: {props.time}</Text>
-        <Text style={styles.smallText}>Towards -> paragon</Text>
+        <Text style={styles.smallText}>Towards -> {toward}</Text>
       </View>
       <View style={styles.etaStyle}>
         <Text style={styles.minText}>{mins}</Text>
