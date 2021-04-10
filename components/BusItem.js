@@ -17,7 +17,7 @@ const BusItem = props => {
         {/* <Text style={styles.smallText}>{props.title}</Text> */}
         <Text style={styles.timeStyle}>{props.time}</Text>
         <Text style={styles.smallText}>Scheduled: {props.time}</Text>
-        <Text style={styles.smallText}>Towards -> {toward}</Text>
+        <Text style={styles.smallText}>Towards -> {props.title}</Text>
       </View>
       <View style={styles.etaStyle}>
         <Text style={styles.minText}>{mins}</Text>

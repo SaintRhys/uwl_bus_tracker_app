@@ -30,6 +30,7 @@ class BusTrackerScreen extends React.Component {
       sawpTitle: this.props.route.params.sawpTitle,
       sawpId: this.props.route.params.sawp,
       banner: true,
+      direction:this.props.route.params.direction
     };
     // this.title = props.navigation.getParam('this.props.route.params.title');
   }
@@ -38,7 +39,7 @@ class BusTrackerScreen extends React.Component {
     this.fetchBusData(this.state.busId);
     console.log('new id: ' + this.state.sawpId + ' : ' + this.state.sawpTitle);
     console.log('old id: ' + this.state.busId + ' : ' + this.state.title);
-    this.props.navigation.setOptions({title: this.props.route.params.title});
+    this.props.navigation.setOptions({title: this.props.route.params.title });
   }
 
   async fetchBusData(busId) {
@@ -86,9 +87,9 @@ class BusTrackerScreen extends React.Component {
     if (this.state.isLoading) {
       return (
         <View style={[styles.screen, {paddingTop: 10}]}>
-          <StatusBar
-            barStyle="dark-content"
-            backgroundColor={Colors.mainFontColor}
+         <StatusBar
+            barStyle="light-content"
+            backgroundColor={Colors.primary}
           />
           <ActivityIndicator />
         </View>
@@ -97,9 +98,9 @@ class BusTrackerScreen extends React.Component {
     if (this.state.dataSource.services.length === 0) {
       return (
         <View style={styles.noBusContainer}>
-          <StatusBar
-            barStyle="dark-content"
-            backgroundColor={Colors.mainFontColor}
+        <StatusBar
+            barStyle="light-content"
+            backgroundColor={Colors.primary}
           />
           <Text style={styles.noBusText}>NO BUSES DUE</Text>
         </View>
@@ -108,47 +109,28 @@ class BusTrackerScreen extends React.Component {
     //console.log(this.state.dataSource);
     return (
       <View style={styles.screen}>
-        <StatusBar
-          barStyle="dark-content"
-          backgroundColor={Colors.mainFontColor}
-        />
-        {/* <Banner
-          visible={this.state.banner}
-          actions={[
-            {
-              label: 'Change Direction',
-              onPress: () => {
-                this.props.navigation.push('BusTracker', {
-                  busId: this.props.route.params.sawp,
-                  title: this.props.route.params.sawpTitle,
-                  sawp: this.props.route.params.busId,
-                  sawpTitle: this.props.route.params.title,
-                });
-              },
-            },
-          ]}
-          icon={({size}) => (
-            <Icon name="swap-horizontal" type="material-community" />
-          )}
-        /> */}
+       <StatusBar
+            barStyle="light-content"
+            backgroundColor={Colors.primary}
+          />
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingHorizontal: 10,
             paddingVertical: 5,
-            backgroundColor: 'lightgrey',
+            backgroundColor: 'white',
           }}>
           <Icon name="swap-horizontal" type="material-community" />
           <TouchableOpacity style={{}} onPress={() => this.changeDirection()}>
-            <Text style={{fontSize: 20, fontWeight: 'bold', color: 'purple'}}>
+            <Text style={{fontSize: 20, fontWeight: 'bold', color: Colors.primary}}>
               Change Direction
             </Text>
           </TouchableOpacity>
         </View>
         <FlatList
           data={this.state.dataSource.services}
-          style={{flex: 1, backgroundColor: Colors.background}}
+          style={{flex: 1,}}
           onRefresh={() => this.fetchBusData(this.state.busId)}
           refreshing={this.state.isRefreshing}
           renderItem={({item}) => (
@@ -156,7 +138,7 @@ class BusTrackerScreen extends React.Component {
               time={item.time.arrive.time}
               hours={item.time.arrive.hrs}
               minutes={item.time.arrive.mins}
-              title={this.state.title}
+              title={this.state.direction}
             />
           )}
           keyExtractor={item => item.journeyId}
@@ -172,7 +154,7 @@ const styles = StyleSheet.create({
     flex: 1,
     //alignItems: "center",
     //justifyContent: "center",
-    backgroundColor: Colors.background,
+    backgroundColor: '#fff',
   },
   list: {
     // flexGrow: 1
@@ -185,7 +167,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.background,
+  //  backgroundColor: Colors.background,
     padding: 20,
   },
   noBusText: {

@@ -3,7 +3,7 @@ import StopInfo from '../models/stopInfo';
 const BUSINFO = [
   new StopInfo(
     '55',
-    'SMR',
+    "St. Mary's Road",
     'L',
     'Ealing Broadway',
     -0.305287686470592,
@@ -11,7 +11,7 @@ const BUSINFO = [
     //'../assets/images/SMRBroadway3.jpeg',
     require('../assets/images/SMRBroadway3.jpeg'),
     '54',
-    'SMR -> Paragon ',
+    'Paragon',
   ),
   // new StopInfo(
   //   '57',
@@ -45,7 +45,7 @@ const BUSINFO = [
     //'../assets/images/Broadway1.jpeg',
     require('../assets/images/Broadway1.jpeg'),
     '55',
-    'SMR -> Ealing Broadway',
+    "St. Mary's Road -> Ealing Broadway",
   ),
   // new StopInfo(
   //   '53',
@@ -90,7 +90,7 @@ const BUSINFO = [
     //'../assets/images/Paragon1.jpeg',
     require('../assets/images/Paragon1.jpeg'),
     '55',
-    'SMR -> Ealing Broadway',
+    "St. Mary's Road -> Ealing Broadway",
   ),
   // new StopInfo(
   //   '52',
@@ -105,7 +105,7 @@ const BUSINFO = [
   // ),
   new StopInfo(
     '54',
-    'SMR',
+    "St. Mary's Road",
     'B',
     'Paragon',
     -0.305086520794475,
@@ -113,7 +113,7 @@ const BUSINFO = [
     //'../assets/images/SMRParagon1.jpeg',
     require('../assets/images/SMRParagon1.jpeg'),
     '55',
-    'SMR -> Ealing Broadway',
+    "St. Mary's Road -> Ealing Broadway",
   ),
 ];
 

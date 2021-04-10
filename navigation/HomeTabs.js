@@ -10,6 +10,7 @@ import Colors from '../constants/Colors';
 import BusSelectScreen from '../screens/BusSelectScreen';
 import AboutScreen from '../screens/AboutScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import Playground from '../screens/playground';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -23,11 +24,13 @@ export default function App() {
           let iconName;
 
           if (route.name === 'Bus Stops') {
-            iconName = 'bus-clock';
+            iconName = 'bus';
           } else if (route.name === 'About') {
             iconName = 'information';
           } else if (route.name === 'Settings') {
             iconName = 'cogs';
+          } else if (route.name === 'Test') {
+          iconName = 'bus-clock';
           }
 
           // You can return any component that you like here!
@@ -47,6 +50,7 @@ export default function App() {
       }}>
       <Tab.Screen name="Bus Stops" component={BusSelectScreen} />
       <Tab.Screen name="About" component={AboutScreen} />
+      {/* <Tab.Screen name="Test" component={Playground} /> */}
       {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
     </Tab.Navigator>
   );

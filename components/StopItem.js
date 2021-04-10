@@ -8,50 +8,40 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
   Platform,
+  ImageBackground,
+  TouchableHighlight
 } from 'react-native';
+
+import LinearGradient from 'react-native-linear-gradient';
+import { Card } from 'react-native-paper';
+
 
 import Colors from '../constants/Colors';
 
 const StopItem = props => {
-  let TouchableCmp =
-    Platform.OS === 'android' && Platform.Version >= 24
-      ? TouchableNativeFeedback
-      : TouchableOpacity;
-  console.log(props.imageUrl);
   return (
-    <View style={styles.container}>
-      <TouchableCmp onPress={props.onViewBus}>
-        <View>
-          <View style={styles.imageContainer}>
-            <Image style={styles.image} source={props.imageUrl} />
-            {/* <Image
-              style={styles.image}
-              source={require('../assets/images/SMRParagon1.jpeg')}
-            /> */}
-          </View>
-          <View style={styles.stopInfo}>
-            <Text style={styles.title}>{props.stopName}</Text>
-            <Text style={{color: Colors.mainFontColor}}>
-              To -> {props.direction}
-            </Text>
-          </View>
-        </View>
-      </TouchableCmp>
-    </View>
+  <Card style={styles.container} onPress={props.onViewBus}>
+      <ImageBackground source={props.imageUrl} style={styles.image} imageStyle={styles.img} >
+    <LinearGradient
+        // Background Linear Gradient
+        colors={['transparent','rgba(0,0,0,0.5)']}
+        style={{backgroundColor:'rgba(0,0,0,0.2)',width:'100%' , height:'100%'}}
+        onPress={props.onViewBus}
+      >
+    <Card.Title title={props.stopName} subtitle={"To "+props.direction}  titleStyle={{color:'#fff'}} subtitleStyle={{color:'#fff'}}  style={{bottom:0 , position:'absolute'}}/>
+      </LinearGradient>
+    </ImageBackground>
+    </Card >
+     
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    shadowColor: Colors.mainFontColor,
-    shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 5},
-    shadowRadius: 8,
-    elevation: 5,
-    borderRadius: 10,
-    backgroundColor: Colors.secondary,
-    height: 150,
-    margin: 10,
+    marginBottom: 10,
+    marginLeft:4,
+    marginRight:4,
+    elevation:0
   },
   image: {
     height: '100%',
@@ -71,6 +61,19 @@ const styles = StyleSheet.create({
   stopInfo: {
     marginHorizontal: 10,
     marginVertical: 5,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+    overflow: 'hidden',
+    borderRadius: 6,
+    height:140,
+    width:'100%',
+    marginTop:10
+  },
+  img:{
+    borderRadius: 6,
+    width:'100%',
   },
 });
 

@@ -8,12 +8,17 @@ import BusSelectScreen from '../screens/BusSelectScreen';
 import BusTrackerScreen from '../screens/BusTrackerScreen';
 import AboutScreen from '../screens/AboutScreen';
 import Home from '../navigation/HomeTabs';
+import NewsScreen from '../screens/newsScreen';
+
 
 import TestScreen from '../screens/TestScreen';
 
 import {NavigationContainer} from '@react-navigation/native';
 
 import {createStackNavigator} from '@react-navigation/stack';
+
+import { Icon } from 'react-native-elements'
+
 
 const Stack = createStackNavigator();
 
@@ -39,13 +44,42 @@ const Stack = createStackNavigator();
 //   },
 // );
 
-function App() {
+
+
+const App  = ()=> {
+
+  function RightTitle(navigation) {
+    return (
+    <Icon 
+    iconStyle={{margin: 10}}
+    name='bell-outline'
+    type='material-community'
+    size={30}
+    color="#000"
+    onPress={() =>  navigation.navigate('News') }
+      />
+    );
+  }
+
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name="Test" component={TestScreen} /> */}
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home} 
+        options={({ navigation }) => ({
+           headerStyle:{
+             backgroundColor:'#fff'
+           },
+              headerTitle: '',
+              headerLeft: () => (
+                RightTitle(navigation)
+                ),
+         
+           
+            })} />
         <Stack.Screen name="BusSelect" component={BusSelectScreen} />
+        <Stack.Screen name="News" component={NewsScreen} />
         <Stack.Screen name="BusTracker" component={BusTrackerScreen} />
         <Stack.Screen name="About" component={AboutScreen} />
       </Stack.Navigator>
