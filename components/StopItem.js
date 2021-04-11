@@ -33,7 +33,7 @@ const StopItem = props => {
         style={{backgroundColor:'rgba(0,0,0,0.2)',width:'100%' , height:'100%'}}
         onPress={props.onViewBus}
       >
-    <Card.Title title={props.stopName} subtitle={"To "+props.direction}  titleStyle={{color:'#fff'}} subtitleStyle={{color:'#fff'}}  style={{bottom:0 , position:'absolute'}}/>
+    <Card.Title title={props.stopName} subtitle={"To "+props.direction}  titleStyle={{color:'#fff'}} subtitleStyle={{color:'#fff'}}  style={{bottom:0 , position:'absolute',  width:"100%"}}/>
       </LinearGradient>
     </ImageBackground>
     </Card >
