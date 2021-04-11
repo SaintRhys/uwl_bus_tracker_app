@@ -15,10 +15,15 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { Card } from 'react-native-paper';
 
+import {useSelector} from 'react-redux';
 
-import Colors from '../constants/Colors';
+
+import {Colors} from '../constants/Colors';
 
 const StopItem = props => {
+
+  const NightState = useSelector(state => state.night.isNight);
+
   return (
   <Card style={styles.container} onPress={props.onViewBus}>
       <ImageBackground source={props.imageUrl} style={styles.image} imageStyle={styles.img} >
@@ -41,7 +46,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft:4,
     marginRight:4,
-    elevation:0
+    elevation:0,
+    backgroundColor:'transparent',
   },
   image: {
     height: '100%',
@@ -57,7 +63,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     overflow: 'hidden',
   },
-  title: {fontSize: 20, marginVertical: 2, color: Colors.mainFontColor},
+
   stopInfo: {
     marginHorizontal: 10,
     marginVertical: 5,

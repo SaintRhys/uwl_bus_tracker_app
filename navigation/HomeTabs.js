@@ -5,18 +5,24 @@ import {Text, View} from 'react-native';
 
 import {Icon} from 'react-native-elements';
 
-import Colors from '../constants/Colors';
 
 import BusSelectScreen from '../screens/BusSelectScreen';
 import AboutScreen from '../screens/AboutScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import Playground from '../screens/playground';
+//import Playground from '../screens/playground';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Colors} from '../constants/Colors';
+import {useSelector} from 'react-redux';
 
+
+
+function App() {
+
+const NightState = useSelector(state => state.night.isNight);
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
@@ -44,9 +50,14 @@ export default function App() {
           );
         },
       })}
+      
       tabBarOptions={{
-        activeTintColor: Colors.primary,
-        inactiveTintColor: Colors.accent,
+        activeTintColor: Colors(NightState).primary,
+       // inactiveTintColor: Colors(NightState).tabber,
+        style: {
+          backgroundColor: Colors(NightState).background
+          },
+       
       }}>
       <Tab.Screen name="Bus Stops" component={BusSelectScreen} />
       <Tab.Screen name="About" component={AboutScreen} />
@@ -55,3 +66,5 @@ export default function App() {
     </Tab.Navigator>
   );
 }
+
+export default App;

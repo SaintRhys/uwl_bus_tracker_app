@@ -1,9 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Colors from '../constants/Colors';
+import {Colors} from '../constants/Colors';
 import {Icon} from 'react-native-elements';
+import {useSelector, useDispatch} from 'react-redux';
+
 
 const BusItem = props => {
+
+  const NightState = useSelector(state => state.night.isNight);
+
   let date = new Date();
   let calcHours = (props.hours - date.getHours()) * 60;
   let calcMins = props.minutes - date.getMinutes();
@@ -15,13 +20,13 @@ const BusItem = props => {
     <View style={styles.busItem}>
       <View style={styles.groupText}>
         {/* <Text style={styles.smallText}>{props.title}</Text> */}
-        <Text style={styles.timeStyle}>{props.time}</Text>
-        <Text style={styles.smallText}>Scheduled: {props.time}</Text>
-        <Text style={styles.smallText}>Towards -> {props.title}</Text>
+        <Text style={[styles.timeStyle,{color:Colors(NightState).primary}]}>{props.time}</Text>
+        <Text style={[styles.smallText,{color:Colors(NightState).mainFontColor}]}>Scheduled: {props.time}</Text>
+        <Text style={[styles.smallText,{color:Colors(NightState).mainFontColor}]}>Towards -> {props.title}</Text>
       </View>
       <View style={styles.etaStyle}>
-        <Text style={styles.minText}>{mins}</Text>
-        <Text style={styles.minUnderText}>mins</Text>
+        <Text style={[styles.minText,{color:Colors(NightState).primary}]}>{mins}</Text>
+        <Text style={[styles.minUnderText,{color:Colors(NightState).primary}]}>mins</Text>
       </View>
     </View>
   );
@@ -29,7 +34,7 @@ const BusItem = props => {
 
 const styles = StyleSheet.create({
   busItem: {
-    borderColor: Colors.primary,
+  //  borderColor: Colors.primary,
     borderRadius: 10,
     borderWidth: 2,
     paddingHorizontal: 10,
@@ -39,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: Colors.secondary,
+    //backgroundColor: Colors.secondary,
     shadowColor: 'black',
     shadowOpacity: 0.26,
     shadowOffset: {width: 0, height: 5},
@@ -49,22 +54,25 @@ const styles = StyleSheet.create({
   groupText: {flexDirection: 'column'},
   timeStyle: {
     fontSize: 32,
-    color: Colors.primary,
+  //  color: Colors.primary,
   },
   minText: {
     fontSize: 25,
-    color: Colors.primary,
+   // color: Colors.primary,
   },
   minUnderText: {
     fontSize: 12,
-    color: Colors.mainFontColor,
+    //color: Colors.mainFontColor,
   },
-  smallText: {fontSize: 14, color: Colors.mainFontColor},
+  smallText: {
+    fontSize: 14, 
+   // color: Colors.mainFontColor
+  },
   etaStyle: {
     alignItems: 'center',
     borderRadius: 25,
     padding: 12,
-    backgroundColor: Colors.secondary,
+   // backgroundColor: Colors.secondary,
     shadowColor: 'black',
     shadowOpacity: 0.26,
     shadowOffset: {width: 0, height: 5},

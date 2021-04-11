@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import Colors from '../constants/Colors';
+//import Colors from '../constants/Colors';
 
 // You can import from local files
 
@@ -28,7 +28,7 @@ export default class App extends React.Component {
                 reverse
                 size={20}
                 type="material-community"
-                color={Colors.primary}
+               // color={Colors.primary}
                 containerStyle={{marginLeft: -10}}
               />
             )}
@@ -45,7 +45,7 @@ export default class App extends React.Component {
                 name="bus"
                 size={20}
                 type="material-community"
-                color={Colors.primary}
+              //  color={Colors.primary}
                 containerStyle={{marginLeft: -10}}
               />
             )}

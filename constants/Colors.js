@@ -1,8 +1,15 @@
-let darkMode = false;
-export default {
-  primary: darkMode === false ? '#0055A3' : '#deefff',
-  secondary: darkMode === false ? '#fff' : '#171717',
-  accent: darkMode === false ? '#9D9D9C' : '#171717',
-  background: darkMode === false ? '#deefff' : '#00182d',
-  mainFontColor: darkMode === false ? '#424242' : '#fff',
-};
+export function Colors(darkMode) {
+  return  {
+  "primary": darkMode ? "#deefff": "#0055A3", 
+  "secondary": darkMode ?"#171717": "#fff",
+  "accent": darkMode ?  "#171717": "#9D9D9C" ,
+  "background": darkMode ?"#00182d":"#fff",
+  "background2": darkMode ?"#1c1c30db":"#fff",
+  "mainFontColor": darkMode ?"#fff": "#424242",
+  "mainIcon": darkMode ? "#fff": "#424242",
+  "uwlColor": darkMode ? "#fff": "#0055A3",
+  "tabber": darkMode ? "#deefff": "green", 
+}}
+
+
+

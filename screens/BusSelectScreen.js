@@ -3,15 +3,15 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar , ScrollView,
 
 import { Avatar, Button, Card, Title, Paragraph, IconButton } from 'react-native-paper';
 
-import constants from "../constants/Colors";
+import {toggle_night} from '../src/redux/actions/nightActions';
+import {Colors} from '../constants/Colors';
 
-import Colors from '../constants/Colors';
-
+import {useSelector} from 'react-redux';
 
 import STOPINFO from '../data/bus-data';
 import StopItem from '../components/StopItem';
 
-import Stops from '../components/testCard';
+//import Stops from '../components/testCard';
 
 const CategorysItems = [
   {
@@ -36,6 +36,7 @@ const CategorysItems = [
 
 const App = props => {
 
+const NightState = useSelector(state => state.night.isNight);
 
   const getStopItem = useCallback(item => {
     return (
@@ -63,7 +64,10 @@ const App = props => {
       id: '1',
       list: (
       <>
-       <Text style={{marginTop: 0, fontSize: 26, marginLeft:10, fontWeight:'bold'}}>The Unofficial {'\n'}<Text style={{color:constants.primary}}>UWL</Text> bus tracker</Text>
+       <Text style={{marginTop: 0, fontSize: 26, marginLeft:10, fontWeight:'bold', color:Colors(NightState).mainFontColor}}>The Unofficial {'\n'}
+       <Text style={{
+        color:Colors(NightState).primary
+         }}>UWL</Text> bus tracker</Text>
       </>
       ),
     },
@@ -131,12 +135,9 @@ const App = props => {
 
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container,{backgroundColor:Colors(NightState).background }]}>
 
-<StatusBar
-            barStyle="light-content"
-            backgroundColor={Colors.primary}
-          />
+
     
     <SectionList
           stickySectionHeadersEnabled={true}
@@ -146,7 +147,7 @@ const App = props => {
             {title: 'Bus Stops', data: B},
           ]}
           renderSectionHeader={({section}) => (
-            <Text style={styles.sectionHeaderStyle}>{section.title}</Text>
+            <Text style={[styles.sectionHeaderStyle,{backgroundColor:Colors(NightState).background, color:Colors(NightState).mainFontColor}]}>{section.title}</Text>
           )}
           renderItem={({item}) => (
             // Item for the FlatListItem
@@ -162,7 +163,7 @@ const App = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#fff'
+   // backgroundColor:'#fff'
   },
   title: {
     fontSize: 16,
@@ -217,10 +218,10 @@ const styles = StyleSheet.create({
   rightContainer: {
   },
   sectionHeaderStyle: {
-    backgroundColor:'#fff',
+   // backgroundColor:'#fff',
     fontSize: 20,
     padding: 10,
-    color: '#000',
+  //  color: '#000',
   },
 
 });

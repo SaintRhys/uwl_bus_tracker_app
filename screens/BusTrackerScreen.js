@@ -11,7 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 import BusItem from '../components/BusItem';
-import Colors from '../constants/Colors';
+//import Colors from '../constants/Colors';
 
 import {Icon} from 'react-native-elements';
 
@@ -87,10 +87,6 @@ class BusTrackerScreen extends React.Component {
     if (this.state.isLoading) {
       return (
         <View style={[styles.screen, {paddingTop: 10}]}>
-         <StatusBar
-            barStyle="light-content"
-            backgroundColor={Colors.primary}
-          />
           <ActivityIndicator />
         </View>
       );
@@ -98,10 +94,6 @@ class BusTrackerScreen extends React.Component {
     if (this.state.dataSource.services.length === 0) {
       return (
         <View style={styles.noBusContainer}>
-        <StatusBar
-            barStyle="light-content"
-            backgroundColor={Colors.primary}
-          />
           <Text style={styles.noBusText}>NO BUSES DUE</Text>
         </View>
       );
@@ -109,10 +101,7 @@ class BusTrackerScreen extends React.Component {
     //console.log(this.state.dataSource);
     return (
       <View style={styles.screen}>
-       <StatusBar
-            barStyle="light-content"
-            backgroundColor={Colors.primary}
-          />
+     
         <View
           style={{
             flexDirection: 'row',
@@ -123,7 +112,9 @@ class BusTrackerScreen extends React.Component {
           }}>
           <Icon name="swap-horizontal" type="material-community" />
           <TouchableOpacity style={{}} onPress={() => this.changeDirection()}>
-            <Text style={{fontSize: 20, fontWeight: 'bold', color: Colors.primary}}>
+            <Text style={{fontSize: 20, fontWeight: 'bold', 
+            //color: Colors.primary
+            }}>
               Change Direction
             </Text>
           </TouchableOpacity>
@@ -172,7 +163,7 @@ const styles = StyleSheet.create({
   },
   noBusText: {
     fontFamily: 'System',
-    color: Colors.mainFontColor,
+  //  color: Colors.mainFontColor,
     fontWeight: 'bold',
     fontSize: 40,
   },
