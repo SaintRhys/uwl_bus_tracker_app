@@ -9,13 +9,15 @@ import {
   TouchableNativeFeedback,
   Platform,
   ImageBackground,
-  TouchableHighlight
+  TouchableHighlight,
+  Alert
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 import { Card } from 'react-native-paper';
 
 import {useSelector} from 'react-redux';
+import {useNetInfo} from '@react-native-community/netinfo';
 
 
 import {Colors} from '../constants/Colors';
@@ -23,9 +25,22 @@ import {Colors} from '../constants/Colors';
 const StopItem = props => {
 
   const NightState = useSelector(state => state.night.isNight);
+  const netInfo = useNetInfo();
+
+
+  function intCheck(item){
+    netInfo.isConnected ? item():  Alert.alert(
+      "Internet Connection Problem",
+      "Please check your network connection and try again.",
+      [
+      
+        { text: "OK", onPress: () => console.log("OK Pressed") }
+      ]
+    );
+  }
 
   return (
-  <Card style={styles.container} onPress={props.onViewBus}>
+  <Card style={styles.container} onPress={()=>intCheck(props.onViewBus)}>
       <ImageBackground source={props.imageUrl} style={styles.image} imageStyle={styles.img} >
     <LinearGradient
         // Background Linear Gradient

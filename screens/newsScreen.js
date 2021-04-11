@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <View style={[styles.container,{backgroundColor:Colors(NightState).background}]}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={[styles.container,{backgroundColor:Colors(NightState).background}]}>
 
  <Card style={[styles.card,{backgroundColor:Colors(NightState).background2}]} onPress={()=>Linking.openURL("https://play.google.com/store/apps/details?id=com.rhyscocktails&hl=en")}>
     <Card.Title title="Bay6 Cocktails" subtitle="10/04/2021" 
@@ -47,8 +47,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
-   
   },
   paragraph: {
     margin: 24,
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
  card:{
-    margin:10
+    marginBottom:10
 
  }
 });
