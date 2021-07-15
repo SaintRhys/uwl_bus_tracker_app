@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {View, Text, StyleSheet, Switch , ScrollView} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, StyleSheet, Switch, ScrollView} from 'react-native';
 
 import {Avatar, Button, Card, Title, Paragraph} from 'react-native-paper';
 
@@ -19,7 +19,7 @@ const AboutScreen = props => {
 
   const onAdToggle = currState => ToggleDay(currState);
 
-const ToggleDay = item => {
+  const ToggleDay = item => {
     //let temp = !item;
     console.log('changing night: ' + item);
     storeData('hasAds', item)
@@ -32,7 +32,6 @@ const ToggleDay = item => {
       });
   };
 
-
   const storeData = async (name, value) => {
     let dataValue = JSON.stringify(value);
     console.log('value: ' + value);
@@ -44,45 +43,62 @@ const ToggleDay = item => {
     }
   };
 
-
-  const LeftContent = props => 
-  <Switch
-  onValueChange={toggleSwitch}
-  value={NightState}
-  style={{marginTop:50, marginRight:30}}
-  //trackColor={NightState ? Colors(NightState).mainFontColor: Colors(NightState).mainFontColor }
-  thumbColor={NightState ? Colors(NightState).primary : Colors(NightState).accent}
-  ios_backgroundColor="#3e3e3e"
-/>
+  const LeftContent = props => (
+    <Switch
+      onValueChange={toggleSwitch}
+      value={NightState}
+      style={{marginTop: 50, marginRight: 30}}
+      //trackColor={NightState ? Colors(NightState).mainFontColor: Colors(NightState).mainFontColor }
+      thumbColor={
+        NightState ? Colors(NightState).primary : Colors(NightState).accent
+      }
+      ios_backgroundColor="#3e3e3e"
+    />
+  );
 
   const toggleSwitch = () => onAdToggle(!NightState);
 
   return (
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: Colors(NightState).background, overflow: 'hidden'},
+      ]}>
+      <ScrollView>
+        <Card
+          style={[
+            styles.card,
+            {backgroundColor: Colors(NightState).background2},
+          ]}>
+          <Card.Content>
+            <Title style={{color: Colors(NightState).mainFontColor}}>
+              About
+            </Title>
+            <Paragraph style={{color: Colors(NightState).mainFontColor}}>
+              This is the unofficial UWL bus tracker app, as there isn't one
+              provided by UWL. This was made by me and a friend for use by UWL
+              students. If something doesn't seem right, you want more features
+              added or you want to get involved, get in contact.
+            </Paragraph>
+          </Card.Content>
+        </Card>
 
-    
-    <View style={[styles.container,{backgroundColor:Colors(NightState).background ,overflow:'hidden'}]}>
-         <ScrollView  >
-      <Card style={[styles.card,{backgroundColor:Colors(NightState).background2}]} >
-        <Card.Content>
-          <Title style={{color:Colors(NightState).mainFontColor}}>About</Title>
-          <Paragraph style={{color:Colors(NightState).mainFontColor}}>
-            This is the unofficial UWL bus tracker app, as there isn't one
-            provided by UWL. This was made by me and a friend for use by UWL
-            students. If something doesn't seem right, you want more features
-            added or you want to get involved, get in contact.
-          </Paragraph>
-        </Card.Content>
-      </Card>
+        <Card style={{backgroundColor: Colors(NightState).background2}}>
+          <Card.Title
+            title="Developers"
+            titleStyle={{color: Colors(NightState).mainFontColor}}
+          />
+          <Card.Content>
+            <Paragraph style={{color: Colors(NightState).mainFontColor}}>
+              Rhys St Romaine
+            </Paragraph>
+            <Paragraph style={{color: Colors(NightState).mainFontColor}}>
+              David Garrick - Bangbola
+            </Paragraph>
+          </Card.Content>
+        </Card>
 
-      <Card style={{ backgroundColor:Colors(NightState).background2}}>
-        <Card.Title title="Developers" titleStyle={{color:Colors(NightState).mainFontColor}} />
-        <Card.Content>
-        <Paragraph style={{color:Colors(NightState).mainFontColor}}>Rhys St Romaine</Paragraph>
-        <Paragraph style={{color:Colors(NightState).mainFontColor}}>David Garrick - Bangbola</Paragraph>
-        </Card.Content>
-      </Card>
-
-{/*        <Card style={{marginTop: 10}} >
+        {/*        <Card style={{marginTop: 10}} >
         <Card.Title title="Socials" />
         <Card.Content>
           <Paragraph>Privacy Policy</Paragraph>
@@ -94,14 +110,27 @@ const ToggleDay = item => {
        
       </Card>  */}
 
-
-      <Card style={[styles.card,{backgroundColor:Colors(NightState).background2, marginTop: 10}]} >
-    <Card.Title title="Enable Dark Mode" titleStyle={{ paddingRight:10, color:Colors(NightState).mainFontColor}}  right={LeftContent} />
-    <Card.Content style={{ paddingRight:30 , marginTop:-20}}>
-      <Paragraph  style={{color:Colors(NightState).mainFontColor}}>Choose between light and dark color paletts for the backgorunds, headers and text</Paragraph>
-    </Card.Content>
-  </Card>
-  </ScrollView>
+        <Card
+          style={[
+            styles.card,
+            {backgroundColor: Colors(NightState).background2, marginTop: 10},
+          ]}>
+          <Card.Title
+            title="Enable Dark Mode"
+            titleStyle={{
+              paddingRight: 10,
+              color: Colors(NightState).mainFontColor,
+            }}
+            right={LeftContent}
+          />
+          <Card.Content style={{paddingRight: 30, marginTop: -20}}>
+            <Paragraph style={{color: Colors(NightState).mainFontColor}}>
+              Choose between light and dark color paletts for the backgorunds,
+              headers and text
+            </Paragraph>
+          </Card.Content>
+        </Card>
+      </ScrollView>
     </View>
   );
 };
@@ -116,10 +145,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
- card:{
-    marginBottom:10
-
- }
+  card: {
+    marginBottom: 10,
+  },
 });
 
 export default AboutScreen;

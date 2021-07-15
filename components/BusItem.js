@@ -35,6 +35,7 @@ const BusItem = props => {
 const styles = StyleSheet.create({
   busItem: {
   //  borderColor: Colors.primary,
+    // backgroundColor: 'green',
     borderRadius: 10,
     borderWidth: 2,
     paddingHorizontal: 10,
