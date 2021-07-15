@@ -47,7 +47,10 @@ const AboutScreen = props => {
     <Switch
       onValueChange={toggleSwitch}
       value={NightState}
-      style={{marginTop: 50, marginRight: 30}}
+      style={{
+        marginTop: 50,
+        marginRight: 30,
+      }}
       //trackColor={NightState ? Colors(NightState).mainFontColor: Colors(NightState).mainFontColor }
       thumbColor={
         NightState ? Colors(NightState).primary : Colors(NightState).accent
@@ -123,7 +126,12 @@ const AboutScreen = props => {
             }}
             right={LeftContent}
           />
-          <Card.Content style={{paddingRight: 30, marginTop: -20}}>
+          <Card.Content
+            style={{
+              width: '85%',
+              paddingRight: 30,
+              marginTop: -20,
+            }}>
             <Paragraph style={{color: Colors(NightState).mainFontColor}}>
               Choose between light and dark color paletts for the backgorunds,
               headers and text
