@@ -112,14 +112,19 @@ function App(props) {
           justifyContent: 'space-between',
           paddingHorizontal: 10,
           paddingVertical: 5,
-          backgroundColor: 'white',
+          // backgroundColor: 'white',
         }}>
-        <Icon name="swap-horizontal" type="material-community" />
+        <Icon
+          name="swap-horizontal"
+          type="material-community"
+          color={Colors(NightState).primary}
+        />
         <TouchableOpacity style={{}} onPress={() => changeDirection()}>
           <Text
             style={{
               fontSize: 20,
               fontWeight: 'bold',
+              color: Colors(NightState).primary,
               //color: Colors.primary
             }}>
             Change Direction

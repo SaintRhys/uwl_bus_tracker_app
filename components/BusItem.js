@@ -22,7 +22,7 @@ const BusItem = props => {
         {/* <Text style={styles.smallText}>{props.title}</Text> */}
         <Text style={[styles.timeStyle,{color:Colors(NightState).primary}]}>{props.time}</Text>
         <Text style={[styles.smallText,{color:Colors(NightState).mainFontColor}]}>Scheduled: {props.time}</Text>
-        <Text style={[styles.smallText,{color:Colors(NightState).mainFontColor}]}>Towards -> {props.title}</Text>
+        <Text style={[styles.smallText,{color:Colors(NightState).mainFontColor}]}>To {props.title}</Text>
       </View>
       <View style={styles.etaStyle}>
         <Text style={[styles.minText,{color:Colors(NightState).primary}]}>{mins}</Text>
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
   busItem: {
   //  borderColor: Colors.primary,
     // backgroundColor: 'green',
-    borderRadius: 10,
-    borderWidth: 2,
+    // borderRadius: 10,
+    // borderWidth: 2,
     paddingHorizontal: 10,
     paddingBottom: 5,
     margin: 10,
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     //backgroundColor: Colors.secondary,
-    shadowColor: 'black',
-    shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 5},
-    shadowRadius: 8,
-    elevation: 5,
+    // shadowColor: 'black',
+    // shadowOpacity: 0.26,
+    // shadowOffset: {width: 0, height: 5},
+    // shadowRadius: 8,
+    // elevation: 5,
   },
   groupText: {flexDirection: 'column'},
   timeStyle: {
@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: 12,
    // backgroundColor: Colors.secondary,
-    shadowColor: 'black',
-    shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 5},
-    shadowRadius: 8,
-    elevation: 5,
+    // shadowColor: 'black',
+    // shadowOpacity: 0.26,
+    // shadowOffset: {width: 0, height: 5},
+    // shadowRadius: 8,
+    // elevation: 5,
   },
 });
 
