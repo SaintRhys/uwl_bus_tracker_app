@@ -9,6 +9,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {toggle_night} from './src/redux/actions/nightActions';
 
 import {useDispatch} from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,11 +23,13 @@ const App = () => {
         adState = JSON.parse(adState);
         onToggleAds(adState);
     }
+    //SplashScreen.hide();
   }
 
   useEffect(() => {
     //   console.log('App.js has rerendered');
     getData();
+    SplashScreen.hide();
   }, []);
 
   return <StopNavigator />;
